@@ -58,13 +58,13 @@
     ],
 
     "defaultEdition": "critical",
-    "showEditionLevelSelector": true,
+    "showEditionLevelSelector": false,
     "availableEditionLevel": [
         {
             "value": "critical",
             "label": "Critical",
             "title": "Critical edition",
-            "visible": true
+            "visible": false
         },
         {
             "value": "diplomatic",
