@@ -13,7 +13,7 @@
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        href="https://fonts.googleapis.com/css?family=Playfair+Display:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet" />
     <!-- Google icons -->
     <link rel="stylesheet"
@@ -22,11 +22,6 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/mofcss.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
-
-    <!-- Graphs -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="js/graphteitag.js"></script>
-    <script src="js/graphFerrara.js"></script>
 </head>
 
 <body id="page-top">
@@ -70,17 +65,7 @@
                             <a href="#parMet">
                                 <li>Methodologies</li>
                             </a>
-                            <ol>
-                                <a href="#parSDE">
-                                    <li style="font-weight: 100;">Semantic Digital Edition</li>
-                                </a>
-                                <a href="#parGeo">
-                                    <li style="font-weight: 100;">Spatial Analysis</li>
-                                </a>
-                                <a href="#parNet">
-                                    <li style="font-weight: 100;">Network Analysis</li>
-                                </a>
-                            </ol>
+        
                             <a href="#parResult">
                                 <li>Results and final remarks</li>
                             </a>
@@ -93,7 +78,93 @@
                 </div>
             </div>
 
-            <div class="paridx" id="parIntro">
+            <div class="paridx" id="text">
+                <h3>1. The text</h3>
+                <p>
+                    The first step in building our scholarly digital edition was the finding and digitization of the source material. In our case we had two witnesses of the text, one being the 1941 original publication in fourteen episode in the periodical <i>Tempo</i> , the other being the reconstruction made by the author starting from drafts of a first print edition that was lost due to the bombing of the publishing house. This last one was printed by Bompiani in 1945 and no modifications were done by the author ever since (that we are aware of).
+                </p>
+                <p>
+                    Due to the invisibility and marginalization of women in literature, the finding of the original sources is not always simple, and there was no mean for us to have access to the original Bompiani edition. Nonetheless, considering that the text has not been subject of more authorial modifications and that we are not interested in analysing minor formal editorial differences in our research, we decided to use the text of the most recent republication (2019) of the Novel by Feltrinelli. This text was directly acquired in epub format, that we then proceeded to convert in a txt format to be able to easier manipulate it.
+                </p>
+                <p>
+                    Regarding the first periodical publication, we were able to acquire photographs of each episode manually thanks to the collaboration with “Archivio Paola Masino” a subsection of the “Archivio del Novecento” of Sapienza University of Rome. The text was then digitized by a combination of manual work and iPhone embedded OCR technology. 
+                </p>
+                <p>
+            </div>
+        
+            <div class="paridx" id="images">
+                <h3>2. The images
+                    <p>As mentioned, the images where simply manually acquired with a phone for transcription purposes. Only in a second moment we decided that it could be worth including them in the edition: the aim is to have high quality images that we are currently trying to obtain from libraries passing through the “document delivery” service of the ACNP https://acnpsearch.unibo.it/journal/27403 catalogue. We envision these will be transformed in IIIF images and properly handled to achieve the best possible visualization and better interoperability. 
+                    </p>
+                    <p>
+                       However, at the present moment we still decided to include the images we had: in order to do so we had to stitch different images together in order to recreate the entirety of the page, this process was done with the help of Quick Picture Tools https://www.quickpicturetools.com/en/ a free online tool for image editing.
+                    </p>
+            </div>
+            <div class="paridx" id="collation">  
+                <h3>3. The collation
+                    <p>
+                        Once we had our plain texts we proceeded with the collation step to help us highlight the different readings. To handle this step properly we decided to combine analogic work with automation. 
+                    </p>
+                    <p>
+                        Firstly we studied the text in order to identify substantial variations, if there were blocks of text that were moved or if the overall structure had been changed during the authorial revision.
+                    </p>
+                    <p>
+                        Secondly, we used collateX software https://collatex.net/  to highlight textual differences, especially formal variants. We wrote a small python script that allowed us to input plain txt files and returned an already TEI encoded text, which is one of the featured outputs provided by collateX. 
+                        This method, even if it helped in speeding up the collation, presented many weak points:
+                    </p>
+                    <p>
+                        - The code was very slow when asked to parse long text documents, for this reason we had to split the text into subsections. The splitting was done according to our interpretation of the text, trying to individuate blocks of text that could be split and compared on their own minimizing possible alignment errors of the machine. 
+                    </p>
+                    <p>
+                        -	We still had to correct the output that was at times wrong, especially in the case of long sentences where the modifications involved more than a single word. Let’s take this example, where the machine aligned “tu” in different sentences, where really the pronoun had different roles in the two different sentences. The collateX output:
+                    </p>
+                    
+                        &ltparticDesc&gt
+                    <p>&ltapp></p>
+                    
+                    <p>&ltrdg wit="ed41"&gt: - Finchè&lt/rdg&gt</p>
+                    <p>&ltrdg wit="ed45"&gt: - E mi dia del&lt/rdg&gt</p>
+                    <p>&lt/app&gt</p>
+                    <p>&ltapp&gt</p>
+                    <p>&ltrdg wit="ed41"&gttu&lt/rdg&gt</p>
+                    <p>&ltrdg wit="ed45"&gttu&lt/rdg&gt</p>
+                    <p>&lt/app&gt</p>
+                    <p>&ltapp&gt</p>
+                    <p>&ltrdg wit="ed45"&gt, se no sto in soggezione. Finché lei&lt/rdg&gt</p>
+                    <p>&lt/app&gt</p>
+                    <p>mi</p>
+                    <p>&ltapp&gt</p>
+                    <p>&ltrdg wit="ed41"&gtparli&lt/rdg&gt</p>
+                    <p>&ltrdg wit="ed45"&gtparla&lt/rdg&gt</p>
+                    <p>&lt/app&gt</p>
+
+That we corrected manually to align the different readings starting from “Finché” as well as highlighting the addition of “E mi dia del tu…” made in the 1945 edition:
+<app>
+<rdg wit="ed41"></rdg>
+  <rdg wit="ed45">E mi dia del tu , se no sto in soggezione. </rdg>
+</app>
+
+<app>
+ <rdg wit="ed41">Finchè tu</rdg>
+ <rdg wit="ed45">Finché lei</rdg>
+</app>
+ mi 
+<app>
+  <rdg wit="ed41">parli</rdg>
+  <rdg wit="ed45">parla</rdg>
+ </app>
+
+                        
+                        
+
+                        
+                        
+                   
+      
+            <div class="paridx" id="modEncoding">
+            <div class="paridx" id="vis">
+            <div class="paridx" id="out">
+                    
                 
                 <div id="biblio">
                     <h3>4. Bibliography</h3>
