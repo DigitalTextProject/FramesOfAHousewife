@@ -149,7 +149,7 @@
     "analogueDef": "",
 
     "possibleLemmaFilters": "resp",
-    "possibleVariantFilters": "",
+    "possibleVariantFilters": "[wit=ed45]",
 
     "variantColorLight": "rgb(208, 220, 255)",
     "variantColorDark": "rgb(101, 138, 255)",
@@ -166,8 +166,8 @@
             "transposition": "rgb(255, 192, 126)",
             "other": "rgb(100, 230, 121)"
         },
-        "cause": {
-            "unknown": "rgb(125, 125, 125)"
+        "wit": {
+            "ed45": "rgb(255, 153, 153)"
         }
     },
 
