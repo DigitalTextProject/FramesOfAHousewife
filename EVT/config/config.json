@@ -16,7 +16,7 @@
     "visCollImageList": "",
     "visCollDataModel": "",
 
-    "defaultViewMode": "imgTxt",
+    "defaultViewMode": "srcTxt",
     "availableViewModes": [
         {
             "label": "READING_TEXT",
@@ -40,7 +40,7 @@
             "label": "TEXT_TEXT",
             "icon": "mode-txtTxt",
             "viewMode": "txtTxt",
-            "visible": true
+            "visible": false
         },
         {
             "label": "COLLATION",
