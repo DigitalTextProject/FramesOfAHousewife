@@ -64,7 +64,7 @@
             "value": "critical",
             "label": "Critical",
             "title": "Critical edition",
-            "visible": false
+            "visible": true
         },
         {
             "value": "diplomatic",
@@ -80,10 +80,10 @@
         }
     ],
     
-    "showDocumentSelector": false,
-    "enableNavBar": false,
-    "initNavBarOpened": false,
-    "thumbnailsButton": false,
+    "showDocumentSelector": true,
+    "enableNavBar": true,
+    "initNavBarOpened": true,
+    "thumbnailsButton": true,
     "viscollButton": false,
 
     "toolPinAppEntries": true,
