@@ -52,7 +52,7 @@
             "label": "SOURCE_TEXT",
             "icon": "mode-srcTxt",
             "viewMode": "srcTxt",
-            "visible": false
+            "visible": true
         }
       
     ],
