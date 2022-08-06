@@ -38,6 +38,10 @@
         </bibl>
       </sourceDesc>
     </fileDesc>
+    <encodingDesc>
+      <variantEncoding method="parallel-segmentation" location="inline"/>      
+     
+    </encodingDesc>
   </teiHeader>
   <text>
     <body>      
